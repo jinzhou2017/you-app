@@ -17,14 +17,15 @@ script:
   - npm run build
 after_script:
   - git clone https://github.com/jinzhou2017/jinzhou2017.github.io.git
-  - git config user.name "jinzhou2017"
-  - git config user.email "jinzhou223@163.com"
   - rm -rf ./jinzhou2017.github.io/*
   - cp -rf ./dist/* ./jinzhou2017.github.io
   - cd ./jinzhou2017.github.io
+  _ git init
+  - git config user.name "jinzhou2017"
+  - git config user.email "952973039@qq.com"
   - git add .
   - git commit -m 'update'
-  - git push -u origin master
+  - git push --force --quiet "https://${GH_TOKEN}@${GH_REF}" master:maste
 
 branches:
   only:
@@ -33,4 +34,4 @@ node_js:
   - '8'
 env:
  global:
-   - GH_REF: github.com/JesseZhao1990/JesseZhao1990.github.io.git
+   - GH_REF: github.com/jinzhou2017/jinzhou2017.github.io.git
