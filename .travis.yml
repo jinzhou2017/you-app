@@ -16,17 +16,6 @@ before_install:
 script:
   - npm run test
   - npm run build:exam
-after_script:
-  - cd ./public
-  - git config user.name "jessezhao1990"
-  - git config user.email "215696013@qq.com"
-  - git clone "https://${gh_taken}@${GH_REF}"
-  - rm -rf ./JesseZhao1990.github.io/vue-lazy-load-list
-  - cp -r  /home/travis/build/JesseZhao1990/vue-lazy-load-list/dist   ./JesseZhao1990.github.io/vue-lazy-load-list
-  - cd JesseZhao1990.github.io
-  - git add .
-  - git commit -m "update"
-  - git push --force --quiet "https://${gh_taken}@${GH_REF}" master:master
 branches:
   only:
   - master
