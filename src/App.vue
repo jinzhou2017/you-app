@@ -47,7 +47,7 @@ export default {
   },
     methods: {
         getNewMovies () {
-          axios.get('api/v2/movie/in_theaters')
+          axios.get('https://api.douban.com/v2/movie/in_theaters')
             .then((res) => {
               let { subjects } = res.data
               this.movies.push(...subjects)

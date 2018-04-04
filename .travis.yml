@@ -15,6 +15,17 @@ before_install:
   - sh -e /etc/init.d/xvfb start
 script:
   - npm run build
+after _success:
+  - git clone https://github.com/jinzhou2017/jinzhou2017.github.io.git
+  - cd ./jinzhou2017.github.io
+  - git config --global user.name jinzhou2017
+  - git config --global user.email jinzhou223@163.com
+  - rm -rf /home/you-app/jinzhou2017.github.io/*
+  - cp /home/you-app/dist/* /home/you-app/jinzhou2017.github.io
+  - git add .
+  - git commit -m 'update'
+  - git push -u origin master
+
 branches:
   only:
   - master
