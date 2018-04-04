@@ -40,20 +40,6 @@ export default {
     this.getNewMovies()
 
   },
-  mounted() {
-    this.ws = new WebSocket('ws://localhost:8080')
-    this.ws.addEventListener('open', () => {
-      this.ws.send('电影')
-    })
-    this.ws.addEventListener('message', (msg)=> {
-      console.log(JSON.parse(msg.data));
-    })
-    let that = this
-    window.onbeforeunload = function(event) {
-      console.log("关闭WebSocket连接！");
-      that.ws.close();
-    }
-  },
   watch: {
     input(val) {
       this.ws.send(val)
