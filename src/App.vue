@@ -11,6 +11,7 @@
     <pre>{{ssss}}</pre>
     <input type="text" v-model="input" />
     <p>{{input}}</p>
+    <p>cssfsjkfjka</p>
     <p>{{msg}}----------------</p>
     <ul style="list-style: none; width: 500px;margin: 0 auto;">
       <li v-for="(item, index) in movies" :key="index">
