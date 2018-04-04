@@ -17,8 +17,8 @@ script:
   - npm run build
 after_script:
   - git clone https://github.com/jinzhou2017/jinzhou2017.github.io.git
-  - git config --global user.name jinzhou2017
-  - git config --global user.email jinzhou223@163.com
+  - git config user.name "jinzhou2017"
+  - git config user.email "jinzhou223@163.com"
   - rm -rf ./jinzhou2017.github.io/*
   - cp -rf ./dist/* ./jinzhou2017.github.io
   - cd ./jinzhou2017.github.io
