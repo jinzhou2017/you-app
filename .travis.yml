@@ -17,11 +17,11 @@ script:
   - npm run build
 after_script:
   - git clone https://github.com/jinzhou2017/jinzhou2017.github.io.git
-  - cd ./jinzhou2017.github.io
   - git config --global user.name jinzhou2017
   - git config --global user.email jinzhou223@163.com
-  - rm -rf /home/travis/build/you-app/jinzhou2017.github.io/*
-  - cp /home/travis/build/you-app/dist/* /home/travis/build/you-app/jinzhou2017.github.io
+  - rm -rf ./jinzhou2017.github.io/*
+  - cp -rf ./dist/* ./jinzhou2017.github.io
+  - cd ./jinzhou2017.github.io
   - git add .
   - git commit -m 'update'
   - git push -u origin master
